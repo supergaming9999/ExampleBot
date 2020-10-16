@@ -1,0 +1,12 @@
+{
+  "name": "example-bot",
+  "version": "1.0.0",
+  "description": "DESCRIPTION",
+  "main": "index.js",
+  "author": "YOUR NAME",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "fs": "0.0.1-security"
+  }
+}
