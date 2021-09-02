@@ -1,7 +1,7 @@
 # ExampleBot
-A example template for a discord bot using discord.js
+An example template for a discord bot using discord.js
 
-Go to "config.json" and change the "token" to your discord bot's token
+Go to "config.json" and change the "token" to your discord bot's token which you can get at https://discord.com/developers/applications
 
 You can also change the prefix to whatever
 
