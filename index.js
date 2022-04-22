@@ -8,7 +8,7 @@ client.config = config;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
-loadEvents();
+loadEvents(client);
 loadCommands(client);
 
 client.login(config.token);
