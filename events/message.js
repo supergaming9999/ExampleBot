@@ -5,7 +5,7 @@ exports.run = async (client, message) => {
     const cmd = messageArray[0];
     const args = messageArray.slice(1);
 
-    const prefix = client.config.token;
+    const prefix = client.config.prefix;
 
     if (!message.content.startsWith(prefix)) return;
     const commandfile = client.commands.get(cmd.slice(prefix.length)) || client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
