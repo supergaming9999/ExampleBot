@@ -1,4 +1,6 @@
 {
-  "token": "YOUR BOT TOKEN GOES HERE",
-  "prefix": "!"
+  "token": "Your bot token goes here",
+  "prefix": "!",
+  "client_id": "Your bot ID goes here for slash commands",
+  "guild_id": "Put a server ID here if you want slash commands ONLY there"
 }

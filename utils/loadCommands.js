@@ -1,25 +1,21 @@
 const fs = require('fs');
 
-function loadCommands(bot) {
+module.exports = (client) => {
     fs.readdir('commands/', (err, files) => {
 
         if (err) console.log(err);
     
-        const jsfile = files.filter(f => f.split('.').pop() === 'js');
-        if (jsfile.length <= 0) {
+        const commandFiles = files.filter(name => name.split('.').pop() === 'js');
+        if (commandFiles.length <= 0) {
             return console.log('Bot Couldn\'t Find Commands in commands Folder.');
         }
     
-        jsfile.forEach((f, i) => {
-            const pull = require(`../commands/${f}`);
-            bot.commands.set(pull.config.name, pull);
-            pull.config.aliases.forEach(alias => {
-                bot.aliases.set(alias, pull.config.name);
+        commandFiles.forEach((file) => {
+            const command = require(`../commands/${file}`);
+            client.commands.set(command.config.name, command);
+            command.config.aliases.forEach(alias => {
+                client.aliases.set(alias, command.config.name);
             });
         });
     });
-}
-
-module.exports = {
-    loadCommands
 }

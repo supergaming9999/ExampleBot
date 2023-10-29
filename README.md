@@ -5,6 +5,7 @@ Go to "config.json" and change the "token" to your discord bot's token which you
 
 You can also change the prefix to whatever
 
+If you want to register slash commands you need to enter the bot's ID in "config.json" in client_id
 
 # Setting Up:
 

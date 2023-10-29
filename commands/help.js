@@ -1,16 +1,19 @@
-const {
-    MessageEmbed
-} = require('discord.js');
+const { EmbedBuilder, Client, Message } = require('discord.js');
 
 module.exports = {
     name: "help",
-    aliases: [],
+    aliases: ["h"],
     description: "Sends a list of all commands and their descriptions",
+    /**
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {String[]} args 
+     */
     run: async (client, message, args) => {
-        var commands = client.commands.array();
-        const helpEmbed = new MessageEmbed()
+        const helpEmbed = new EmbedBuilder()
             .setTitle("Help")
-            .setDescription(commands.map(cmd => `**${cmd.name}**${cmd.aliases.length ? `(${cmd.aliases.join(', ')})` : ''} - ${cmd.description}`));
-        message.channel.send(helpEmbed);
+            .setDescription(client.commands.map(cmd => `**${cmd.name}**${cmd.aliases.length ? `(${cmd.aliases.join(', ')})` : ''} - ${cmd.description}`));
+
+        message.reply({ embeds: [helpEmbed] });
     }
 }

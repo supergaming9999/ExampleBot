@@ -1,12 +1,12 @@
 {
   "name": "example-bot",
   "version": "1.0.0",
-  "description": "DESCRIPTION",
+  "description": "Discord Bot template made with discord.js",
   "main": "index.js",
-  "author": "YOUR NAME",
+  "author": "supergaming9999",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.3.1",
+    "discord.js": "^14.13.0",
     "fs": "0.0.1-security"
   }
 }
