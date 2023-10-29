@@ -12,10 +12,7 @@ module.exports = (client) => {
     
         commandFiles.forEach((file) => {
             const command = require(`../commands/${file}`);
-            client.commands.set(command.config.name, command);
-            command.config.aliases.forEach(alias => {
-                client.aliases.set(alias, command.config.name);
-            });
+            client.commands.set(command.name, command);
         });
     });
 }

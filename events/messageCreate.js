@@ -13,11 +13,13 @@ exports.run = async (client, message) => {
     if (!message.content.startsWith(prefix)) return;
 
     const messageArray = message.content.split(' ');
-    const cmd = messageArray[0].toLowerCase();
+    const cmd = messageArray[0].slice(prefix.length).toLowerCase();
     const args = messageArray.slice(1);
     const command =
         client.commands.get(cmd) ||
-        client.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(cmd));
+        client.commands.find((c) => c.aliases.includes(cmd));
+    
+    if (!command) return;
     
     try {
         await command.run(client, message, args);
